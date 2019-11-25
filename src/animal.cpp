@@ -80,3 +80,8 @@ string Animal::getDieta()
 {
 	return dieta;
 }
+
+void Animal::setTratador(Tratador & m_tratador)
+{
+	// m_tratador.setNivelDeSeguranca;
+}

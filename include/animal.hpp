@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include "veterinario.hpp"
+#include "tratador.hpp"
 
 using namespace std;
 
@@ -22,6 +24,8 @@ using namespace std;
 			Animal(int m_id, string m_classe, string m_nome_cientifico, string m_nome_batismo, char m_sexo, double m_tamanho, string m_dieta);
 			~Animal();
 
+			// virtual void cadastrar_animal();
+
 			void setId(int m_id);
 			int getId();
 
@@ -39,6 +43,12 @@ using namespace std;
 
 			void setDieta(string m_dieta);
 			string getDieta();
+
+			void setVeterinario(Veterinario & m_veterinario);
+			Veterinario getVeterinario();
+
+			void setTratador(Tratador & m_tratador);
+			Tratador getTratador();
 	};
 
 #endif
