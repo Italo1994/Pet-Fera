@@ -6,11 +6,16 @@
 #include <vector>
 #include "animal.hpp"
 
+
 /* ##################  FUNÇÃO ADD_ANIMAL => NÃO RECEBE PARÂMETROS  ################# */
 
 using namespace std;
+	
+	void interface_grafica();
 
-	void cadastrar_animal(Animal & m_animal);
+	int opcoes();
+
+	Animal cadastrar_animal(int opcaoAnimal);
 
 
 #endif

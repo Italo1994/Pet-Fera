@@ -1,27 +1,28 @@
-#include "gerenciar_pet.hpp"
-#include "anfibio.hpp"
-#include "animal.hpp"
-#include "ave.hpp"
-#include "mamifero.hpp"
-#include "reptil.hpp"
-#include <algorithm>
+#include "pet_manager.hpp"
 
-// template <typename T>
-
-void interface_grafica()
+int interface_grafica()
 {
+	int alternativa = 0;
+
 	cout << "******** MENU *********" << endl << endl;
-	cout << "(1) - Adicionar animal" << endl;
+	cout << "(1) - Cadastrar animal" << endl;
 	cout << "(2) - Remover animal" << endl;
 	cout << "(3) - Alterar dados" << endl;
 	cout << "(5) - Pesquisar animal" << endl;
-	cout << "(0) - Sair do programa" << endl;
+	cout << "(0) - Sair do programa" << endl << endl;
 	cout << "********	   *********" << endl;
+
+	cout << "ESCOLHA UMA OPÇÃO PARA OPERAR NO SISTEMA:" << endl;
+	cin >> alternativa;
+
+	return alternativa;
 }
 
-int opcoes()
+int opcoesAnimais()
 {
 	int option = 0;
+
+	cout << "Informe a classe de animal que deseja cadastrar" << endl;
 
 	cout << "1 - ANFÍBIO" << endl;
 	cout << "2 - AVE" << endl;
@@ -51,13 +52,8 @@ int opcoes()
 
 }
 
-Animal cadastrar_animal(int opcaoAnimal)
+void cadastrarAnfibio(Anfibio &m_anfibio)
 {
-
-	if( opcaoAnimal == 1 )
-	{
-		Anfibio anfibio;
-
 		int total_de_mudas;
 		int id;
 		string classe;
@@ -91,23 +87,19 @@ Animal cadastrar_animal(int opcaoAnimal)
 		cout << "DIGITE A DIETA DO ANFÍBIO:" << endl;
 		cin >> dieta;
 
-		anfibio.setTotalDeMudas(total_de_mudas);
-		anfibio.setId(id);
-		anfibio.setClasse(classe);
-		anfibio.setNomeCientifico(nome_cientifico);
-		anfibio.setNomeBatismo(nome_batismo);
-		anfibio.setSexo(sexo);
-		anfibio.setTamanho(tamanho);
-		anfibio.setDieta(dieta);
+		m_anfibio.setTotalDeMudas(total_de_mudas);
+		m_anfibio.setId(id);
+		m_anfibio.setClasse(classe);
+		m_anfibio.setNomeCientifico(nome_cientifico);
+		m_anfibio.setNomeBatismo(nome_batismo);
+		m_anfibio.setSexo(sexo);
+		m_anfibio.setTamanho(tamanho);
+		m_anfibio.setDieta(dieta);
+}
 
-		return anfibio;
-	}
-
-	else if( opcaoAnimal == 2 )
-	{
-		Ave ave;
-
-		double tamanho_do_bico;
+void cadastrarAve(Ave &m_ave)
+{
+	double tamanho_do_bico;
 		double envergadura_das_asas;
 		int id;
 		string classe;
@@ -144,25 +136,20 @@ Animal cadastrar_animal(int opcaoAnimal)
 		cout << "DIGITE A DIETA DA AVE:" << endl;
 		cin >> dieta;
 
-		ave.setTamanhoDoBico(tamanho_do_bico);
-		ave.setEnvergaduraDasAsas(envergadura_das_asas);
-		ave.setId(id);
-		ave.setClasse(classe);
-		ave.setNomeCientifico(nome_cientifico);
-		ave.setNomeBatismo(nome_batismo);
-		ave.setSexo(sexo);
-		ave.setTamanho(tamanho);
-		ave.setDieta(dieta);
+		m_ave.setTamanhoDoBico(tamanho_do_bico);
+		m_ave.setEnvergaduraDasAsas(envergadura_das_asas);
+		m_ave.setId(id);
+		m_ave.setClasse(classe);
+		m_ave.setNomeCientifico(nome_cientifico);
+		m_ave.setNomeBatismo(nome_batismo);
+		m_ave.setSexo(sexo);
+		m_ave.setTamanho(tamanho);
+		m_ave.setDieta(dieta);
+}
 
-		return ave;
-
-	}
-
-	else if( opcaoAnimal == 3 )
-	{
-		Mamifero mamifero;
-
-		string cor_pelo;
+void cadastrarMamifero(Mamifero &m_mamifero)
+{
+	string cor_pelo;
 		int id;
 		string classe;
 		string nome_cientifico;
@@ -195,23 +182,19 @@ Animal cadastrar_animal(int opcaoAnimal)
 		cout << "DIGITE A DIETA DO MAMÍFERO:" << endl;
 		cin >> dieta;
 
-		mamifero.setCorDoPelo(cor_pelo);
-		mamifero.setId(id);
-		mamifero.setClasse(classe);
-		mamifero.setNomeCientifico(nome_cientifico);
-		mamifero.setNomeBatismo(nome_batismo);
-		mamifero.setSexo(sexo);
-		mamifero.setTamanho(tamanho);
-		mamifero.setDieta(dieta);
+		m_mamifero.setCorDoPelo(cor_pelo);
+		m_mamifero.setId(id);
+		m_mamifero.setClasse(classe);
+		m_mamifero.setNomeCientifico(nome_cientifico);
+		m_mamifero.setNomeBatismo(nome_batismo);
+		m_mamifero.setSexo(sexo);
+		m_mamifero.setTamanho(tamanho);
+		m_mamifero.setDieta(dieta);
+}
 
-		return mamifero;
-	}
-
-	else if( opcaoAnimal == 4 )
-	{
-		Reptil reptil;
-
-		bool venenoso;
+void cadastrarReptil(Reptil &m_reptil)
+{
+	bool venenoso;
 		string tipo_veneno;
 		int id;
 		string classe;
@@ -248,17 +231,13 @@ Animal cadastrar_animal(int opcaoAnimal)
 		cout << "DIGITE A DIETA DO RÉPTIL:" << endl;
 		cin >> dieta;
 
-		reptil.setVenenoso(venenoso);
-		reptil.setTipoVeneno(tipo_veneno);
-		reptil.setId(id);
-		reptil.setClasse(classe);
-		reptil.setNomeCientifico(nome_cientifico);
-		reptil.setNomeBatismo(nome_batismo);
-		reptil.setSexo(sexo);
-		reptil.setTamanho(tamanho);
-		reptil.setDieta(dieta);
-
-		return reptil;
-	}
-	
+		m_reptil.setVenenoso(venenoso);
+		m_reptil.setTipoVeneno(tipo_veneno);
+		m_reptil.setId(id);
+		m_reptil.setClasse(classe);
+		m_reptil.setNomeCientifico(nome_cientifico);
+		m_reptil.setNomeBatismo(nome_batismo);
+		m_reptil.setSexo(sexo);
+		m_reptil.setTamanho(tamanho);
+		m_reptil.setDieta(dieta);
 }

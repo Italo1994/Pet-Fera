@@ -71,6 +71,16 @@ char Animal::getSexo()
 	return sexo;
 }
 
+void Animal::setTamanho(double m_tamanho)
+{
+	tamanho = m_tamanho;
+}
+
+double Animal::getTamanho()
+{
+	return tamanho;
+}
+
 void Animal::setDieta(string m_dieta)
 {
 	dieta = m_dieta;
@@ -81,7 +91,9 @@ string Animal::getDieta()
 	return dieta;
 }
 
+/*
 void Animal::setTratador(Tratador & m_tratador)
 {
 	// m_tratador.setNivelDeSeguranca;
 }
+*/

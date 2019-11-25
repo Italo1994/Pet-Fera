@@ -6,28 +6,47 @@
 #include "funcionario.hpp"
 #include "mamifero.hpp"
 #include "reptil.hpp"
-#include "tratador.hpp"
-#include "veterinario.hpp"
-#include "gerenciar_pet.hpp"
+// #include "tratador.hpp"
+// #include "veterinario.hpp"
+#include "pet_manager.hpp"
 
 using namespace std;
 
 int main(int argc, char * argv[]) {
-	Reptil animal1;
+	
+	int optionAnimal = 0;
+	int optionInterface = 0;
 
-	animal1.setId(20);
-	animal1.setClasse("Classe 1");
-	animal1.setNomeCientifico("BUMBALAMBADA");
-	animal1.setNomeBatismo("CHACHAPUM");
-	animal1.setSexo('m');
-	animal1.setDieta("Carne");
+	optionInterface = interface_grafica();
 
-	cout << "ID do animal: " << animal1.getId() << endl;
-	cout << "Classe: " << animal1.getClasse() << endl;
-	cout << "Nome Científico: " << animal1.getNomeCientifico() << endl;
-	cout << "Nome de Batismo: " << animal1.getNomeBatismo() << endl;
-	cout << "Sexo: " << animal1.getSexo() << endl;
-	cout << "Dieta: " << animal1.getDieta() << endl;
+	
+	if( optionInterface == 1 )
+	{
+
+		optionAnimal = opcoesAnimais();
+
+		if(optionAnimal == 1)
+		{
+			Anfibio anfibio;
+			cadastrarAnfibio(anfibio);
+		}
+		else if(optionAnimal == 2)
+		{
+			Ave ave;
+			cadastrarAve(ave);
+		}
+		else if(optionAnimal == 3)
+		{
+			Mamifero mamifero;
+			cadastrarMamifero(mamifero);
+		}
+		else if(optionAnimal == 4)
+		{
+			Reptil reptil;
+			cadastrarReptil(reptil);
+		}
+
+	}
 
 	return 0;
 }
