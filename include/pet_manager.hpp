@@ -63,6 +63,28 @@ using namespace std;
     */
 	void cadastrarReptil(Reptil &m_reptil);
 
-	void listarAnimais(vector<Animal> &animais);
+	/**
+       * Uma função para consultar um animal.
+       * @param recebe um objeto do tipo Animal como parâmetro.
+       * 
+       * @return não retorna nada
+    */
+	void consultar(vector<Animal> &animais);
+
+	/**
+       * Uma função para remover um animal.
+       * @param recebe um objeto do tipo Animal como parâmetro.
+       * 
+       * @return não retorna nada
+    */
+	void remover(vector<Animal> &animais);
+
+	/**
+       * Uma função para alterar os dados de um animal.
+       * @param recebe um objeto do tipo Animal como parâmetro.
+       * 
+       * @return não retorna nada
+    */
+	void alterar_dados(vector<Animal> &animais);
 
 #endif

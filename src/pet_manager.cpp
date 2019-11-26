@@ -1,4 +1,5 @@
 #include "pet_manager.hpp"
+#include <iterator>
 
 int interface_grafica()
 {
@@ -7,8 +8,8 @@ int interface_grafica()
 	cout << "******** MENU *********" << endl << endl;
 	cout << "(1) - Cadastrar animal" << endl;
 	cout << "(2) - Remover animal" << endl;
-	cout << "(3) - Alterar dados" << endl;
-	cout << "(5) - Pesquisar animal" << endl;
+	cout << "(3) - Alterar dados do animal" << endl;
+	cout << "(4) - Consultar animal no banco de dados" << endl;
 	cout << "(0) - Sair do programa" << endl << endl;
 	cout << "********	   *********" << endl;
 
@@ -27,7 +28,7 @@ int opcoesAnimais()
 	cout << "1 - ANFÍBIO" << endl;
 	cout << "2 - AVE" << endl;
 	cout << "3 - MAMÍFERO" << endl;
-	cout << "4 - REPTIL" << endl;
+	cout << "4 - RÉPTIL" << endl;
 
 	cin >> option;
 
@@ -260,7 +261,121 @@ void cadastrarReptil(Reptil &m_reptil)
 		m_reptil.setDieta(dieta);
 }
 
-void listarAnimais(vector<Animal> &animais)
+void consultar(vector<Animal> &animais)
 {
-	
+
+	for (unsigned i = 0; i < animais.size(); i++)
+	{
+		cout << "==== LISTA DE ANIMAIS CADASTRADOS ====" << endl;
+		cout << "ID: " << animais[i].getId() << endl;
+		cout << "Classe: " << animais[i].getClasse() << endl;
+		cout << "Nome científico: " << animais[i].getNomeCientifico() << endl;
+		cout << "Nome de batismo: " << animais[i].getNomeBatismo() << endl;
+		cout << "Sexo: " << animais[i].getSexo() << endl;
+		cout << "Tamanho: " << animais[i].getTamanho() << endl;
+		cout << "Dieta: " << animais[i].getDieta() << endl;
+		cout << "======================================" << endl << endl;
+	}
+
+	if(animais.size() == 0)
+	{
+		cout << "NENHUM ANIMAL CADASTRADO NO SISTEMA!" << endl;
+	}
+
+}
+
+void remover(vector<Animal> &animais)
+{
+	int idAnimal = 0;
+
+	cout << "INFORME O ID DO ANIMAL QUE DESEJA REMOVER" << endl;
+	cin >> idAnimal;
+
+	for (unsigned i = 0; i < animais.size(); i++)
+	{
+		if( animais[i].getId() == idAnimal )
+		{
+			animais.erase( animais.begin()+i );
+		}
+	}
+
+}
+
+void alterar_dados(vector<Animal> &animais)
+{
+	int idAnimal = 0;
+
+	cout << "INFORME O ID DO ANIMAL QUE DESEJA ALTERAR OS DADOS" << endl;
+	cin >> idAnimal;
+
+	for (unsigned i = 0; i < animais.size(); i++)
+	{
+		if( animais[i].getId() == idAnimal )
+		{
+			int novoId; //novo id que irá alterar
+			string novaClasse; // nova classe que irá alterar
+			string novoNomeCientifico; // novo nome científico do animal
+			string novoNomeBatismo; // novo nome de batismo do animal
+			char novoSexo; // novo sexo do animal
+			double novoTamanho; // novo tamanho do animal
+			string novaDieta; // nova dieta do animal
+
+			int opcao; // opção do menu
+
+			// interface de menu
+			cout << "O QUE VOCÊ DESEJA ALTERAR" << endl;
+			cout << "(1) ID" << endl;
+			cout << "(2) CLASSE" << endl;
+			cout << "(3) NOME CIENTÍFICO" << endl;
+			cout << "(4) NOME DE BATISMO" << endl;
+			cout << "(5) SEXO" << endl;
+			cout << "(6) TAMANHO" << endl;
+			cout << "(7) DIETA" << endl << endl;
+
+			cin >> opcao;
+
+			if(opcao == 1)
+			{
+				cin >> novoId;
+				animais[i].setId(novoId);
+			}
+
+			if(opcao == 2)
+			{
+				cin >> novaClasse;
+				animais[i].setClasse(novaClasse);
+			}
+
+			if(opcao == 3)
+			{
+				cin >> novoNomeCientifico;
+				animais[i].setNomeCientifico(novoNomeCientifico);
+			}
+
+			if(opcao == 4)
+			{
+				cin >> novoNomeBatismo;
+				animais[i].setNomeBatismo(novoNomeBatismo);
+			}
+
+			if(opcao == 5)
+			{
+				cin >> novoSexo;
+				animais[i].setSexo(novoSexo);
+			}
+
+			if(opcao == 6)
+			{
+				cin >> novoTamanho;
+				animais[i].setTamanho(novoTamanho);
+			}
+
+			if(opcao == 7)
+			{
+				cin >> novaDieta;
+				animais[i].setDieta(novaDieta);
+			}
+
+		}
+	}
 }

@@ -10,22 +10,29 @@ using namespace std;
 
 	class Animal {
 		protected:
-			int id;
-			string classe;
-			string nome_cientifico;
-			string nome_batismo;
-			char sexo;
-			double tamanho;
-			string dieta;
+			int id; //id do animal
+			string classe; // classe do animal
+			string nome_cientifico; // nome cientifico do animal
+			string nome_batismo; // nome de batismo do animal
+			char sexo; //sexo do animal
+			double tamanho; //tamanho do animal
+			string dieta; //dieta do animal
 			// Veterinario veterinario;
 			// Tratador tratador;
 		public:
+			// construtor
 			Animal();
+			// construtor parametrizado
 			Animal(int m_id, string m_classe, string m_nome_cientifico, string m_nome_batismo, char m_sexo, double m_tamanho, string m_dieta);
+			// destrutor
 			~Animal();
 
 			// virtual void cadastrar_animal();
 
+			/*
+			*Métodos setters e getters referentes 
+			* a classe Animal
+			*/
 			void setId(int m_id);
 			int getId();
 

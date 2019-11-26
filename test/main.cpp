@@ -58,7 +58,17 @@ int main(int argc, char * argv[]) {
 
 		else if( optionInterface == 2 )
 		{
-			// listarAnimais(animais);
+			remover(animais);
+		}
+
+		else if( optionInterface == 3 )
+		{
+			alterar_dados(animais);
+		}
+
+		else if( optionInterface == 4 )
+		{
+			consultar(animais);
 		}
 
 	} while(optionInterface != 0);

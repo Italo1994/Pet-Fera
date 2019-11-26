@@ -11,11 +11,11 @@ AP3: animal.o anfibio.o ave.o mamifero.o reptil.o funcionario.o veterinario.o tr
 # o -I include diz que a biblioteca está nessa pasta
 
 animal.o: src/animal.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/animal.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/animal.cpp
 	@echo "Instalando animal..."
 
 anfibio.o: src/anfibio.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/anfibio.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/anfibio.cpp
 	@echo "Instalando anfibio..."
 
 ave.o: src/ave.cpp
@@ -23,31 +23,31 @@ ave.o: src/ave.cpp
 	@echo "Instalando ave..."
 
 mamifero.o: src/mamifero.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/mamifero.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/mamifero.cpp
 	@echo "Instalando mamifero..."
 
 reptil.o: src/reptil.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/reptil.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/reptil.cpp
 	@echo "Instalando reptil..."
 
 funcionario.o: src/funcionario.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/funcionario.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/funcionario.cpp
 	@echo "Instalando funcionario..."	
 
 veterinario.o: src/veterinario.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/veterinario.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/veterinario.cpp
 	@echo "Instalando veterinario..."
 
 tratador.o: src/tratador.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/tratador.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/tratador.cpp
 	@echo "Instalando tratador..."
 
 pet_manager.o: src/pet_manager.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/pet_manager.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/pet_manager.cpp
 	@echo "Instalando pet_manager..."
 
-main.o: src/main.cpp
-	@$(CC) $(CPPFLAGS) -c -Iinclude src/main.cpp
+main.o: test/main.cpp
+	@$(CC) $(CPPFLAGS) -c -I include test/main.cpp
 	@echo "Aguarde..."
 	@echo "Pronto!!!\nPara mais informações digite o comando --> ./AP3\n"
 clean:
