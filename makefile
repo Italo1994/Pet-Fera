@@ -46,8 +46,8 @@ pet_manager.o: src/pet_manager.cpp
 	@$(CC) $(CPPFLAGS) -c -I include src/pet_manager.cpp
 	@echo "Instalando pet_manager..."
 
-main.o: test/main.cpp
-	@$(CC) $(CPPFLAGS) -c -I include test/main.cpp
+main.o: src/main.cpp
+	@$(CC) $(CPPFLAGS) -c -I include src/main.cpp
 	@echo "Aguarde..."
 	@echo "Pronto!!!\nPara mais informações digite o comando --> ./AP3\n"
 clean:
