@@ -14,39 +14,54 @@ using namespace std;
 
 int main(int argc, char * argv[]) {
 	
-	int optionAnimal = 0;
 	int optionInterface = 0;
+	vector<Animal> animais;
 
-	optionInterface = interface_grafica();
+	do {
 
-	
-	if( optionInterface == 1 )
-	{
+		int optionAnimal = 0;
 
-		optionAnimal = opcoesAnimais();
+		optionInterface = interface_grafica();
 
-		if(optionAnimal == 1)
+		
+		if( optionInterface == 1 )
 		{
-			Anfibio anfibio;
-			cadastrarAnfibio(anfibio);
-		}
-		else if(optionAnimal == 2)
-		{
-			Ave ave;
-			cadastrarAve(ave);
-		}
-		else if(optionAnimal == 3)
-		{
-			Mamifero mamifero;
-			cadastrarMamifero(mamifero);
-		}
-		else if(optionAnimal == 4)
-		{
-			Reptil reptil;
-			cadastrarReptil(reptil);
+
+			optionAnimal = opcoesAnimais();
+
+			if(optionAnimal == 1)
+			{
+				Anfibio anfibio;
+				cadastrarAnfibio(anfibio);
+				animais.push_back(anfibio);
+			}
+			else if(optionAnimal == 2)
+			{
+				Ave ave;
+				cadastrarAve(ave);
+				animais.push_back(ave);
+			}
+			else if(optionAnimal == 3)
+			{
+				Mamifero mamifero;
+				cadastrarMamifero(mamifero);
+				animais.push_back(mamifero);
+			}
+			else if(optionAnimal == 4)
+			{
+				Reptil reptil;
+				cadastrarReptil(reptil);
+				animais.push_back(reptil);
+			}
+
 		}
 
-	}
+		else if( optionInterface == 2 )
+		{
+			// listarAnimais(animais);
+		}
+
+	} while(optionInterface != 0);
 
 	return 0;
 }

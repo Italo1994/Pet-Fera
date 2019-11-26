@@ -2,7 +2,7 @@
 
 int interface_grafica()
 {
-	int alternativa = 0;
+	int alternativa = 0; // valor que indica a opção de menu a ser escolhida pelo usuário
 
 	cout << "******** MENU *********" << endl << endl;
 	cout << "(1) - Cadastrar animal" << endl;
@@ -20,7 +20,7 @@ int interface_grafica()
 
 int opcoesAnimais()
 {
-	int option = 0;
+	int option = 0; // valor que indica a opção do tipo de animal a ser escolhido pelo usuário
 
 	cout << "Informe a classe de animal que deseja cadastrar" << endl;
 
@@ -50,18 +50,20 @@ int opcoesAnimais()
 		return 4;
 	}
 
+	return 0;
+
 }
 
 void cadastrarAnfibio(Anfibio &m_anfibio)
 {
-		int total_de_mudas;
-		int id;
-		string classe;
-		string nome_cientifico;
-		string nome_batismo;
-		char sexo;
-		double tamanho;
-		string dieta;
+		int total_de_mudas; // total de mudas do anfíbio
+		int id; // identificação do anfíbio
+		string classe; // classe do anfíbio
+		string nome_cientifico; // nome científico do anfíbio
+		string nome_batismo; // nome do batismo do anfíbio
+		char sexo; // sexo do anfíbio
+		double tamanho; // tamanho do anfíbio
+		string dieta; // dieta do anfíbio
 
 		cout << "DIGITE O TOTAL DE MUDAS DO ANFÍBIO:" << endl;
 		cin >> total_de_mudas;
@@ -87,6 +89,10 @@ void cadastrarAnfibio(Anfibio &m_anfibio)
 		cout << "DIGITE A DIETA DO ANFÍBIO:" << endl;
 		cin >> dieta;
 
+		/*
+		*	atribuindo os valores digitados pelo usuário
+		*	aos métodos setters da classe
+		*/
 		m_anfibio.setTotalDeMudas(total_de_mudas);
 		m_anfibio.setId(id);
 		m_anfibio.setClasse(classe);
@@ -99,15 +105,15 @@ void cadastrarAnfibio(Anfibio &m_anfibio)
 
 void cadastrarAve(Ave &m_ave)
 {
-	double tamanho_do_bico;
-		double envergadura_das_asas;
-		int id;
-		string classe;
-		string nome_cientifico;
-		string nome_batismo;
-		char sexo;
-		double tamanho;
-		string dieta;
+	double tamanho_do_bico; // tamanho do bico da ave
+	double envergadura_das_asas; // envergadura das asas da ave
+	int id; // identificação da ave
+	string classe; // classe da ave
+	string nome_cientifico; // nome científico da ave
+	string nome_batismo; // nome de batismo da ave
+	char sexo; // sexo da ave
+	double tamanho; // tamanho da ave
+	string dieta; // dieta da ave
 
 		cout << "DIGITE O TAMANHO DO BICO DA AVE:" << endl;
 		cin >> tamanho_do_bico;
@@ -136,6 +142,10 @@ void cadastrarAve(Ave &m_ave)
 		cout << "DIGITE A DIETA DA AVE:" << endl;
 		cin >> dieta;
 
+		/*
+		*	atribuindo os valores digitados pelo usuário
+		*	aos métodos setters da classe
+		*/
 		m_ave.setTamanhoDoBico(tamanho_do_bico);
 		m_ave.setEnvergaduraDasAsas(envergadura_das_asas);
 		m_ave.setId(id);
@@ -149,14 +159,14 @@ void cadastrarAve(Ave &m_ave)
 
 void cadastrarMamifero(Mamifero &m_mamifero)
 {
-	string cor_pelo;
-		int id;
-		string classe;
-		string nome_cientifico;
-		string nome_batismo;
-		char sexo;
-		double tamanho;
-		string dieta;
+	string cor_pelo; // cor do pelo do mamífero
+	int id; // identificação do mamífero
+	string classe; // classe do mamífero
+	string nome_cientifico; // nome científico do mamífero
+	string nome_batismo; // nome de batismo do mamífero
+	char sexo; // sexo do mamífero
+	double tamanho; // tamanho do mamífero
+	string dieta; // dieta do mamífero
 
 		cout << "DIGITE A COR DO PELO DO MAMÍFERO:" << endl;
 		cin >> cor_pelo;
@@ -182,6 +192,10 @@ void cadastrarMamifero(Mamifero &m_mamifero)
 		cout << "DIGITE A DIETA DO MAMÍFERO:" << endl;
 		cin >> dieta;
 
+		/*
+		*	atribuindo os valores digitados pelo usuário
+		*	aos métodos setters da classe
+		*/
 		m_mamifero.setCorDoPelo(cor_pelo);
 		m_mamifero.setId(id);
 		m_mamifero.setClasse(classe);
@@ -194,15 +208,15 @@ void cadastrarMamifero(Mamifero &m_mamifero)
 
 void cadastrarReptil(Reptil &m_reptil)
 {
-	bool venenoso;
-		string tipo_veneno;
-		int id;
-		string classe;
-		string nome_cientifico;
-		string nome_batismo;
-		char sexo;
-		double tamanho;
-		string dieta;
+	bool venenoso; // indica se o réptil é venenoso
+	string tipo_veneno; // indica o tipo de veneno do réptil
+	int id; // identificação do réptil
+	string classe; // classe do réptil
+	string nome_cientifico; // nome científico do réptil
+	string nome_batismo; // nome de batismo do réptil
+	char sexo; // sexo do réptil
+	double tamanho; // tamanho do réptil
+	string dieta; // dieta do réptil
 
 		cout << "INFORME SE O RÉPTIL É VENENOSO:" << endl;
 		cin >> venenoso;
@@ -231,6 +245,10 @@ void cadastrarReptil(Reptil &m_reptil)
 		cout << "DIGITE A DIETA DO RÉPTIL:" << endl;
 		cin >> dieta;
 
+		/*
+		*	atribuindo os valores digitados pelo usuário
+		*	aos métodos setters da classe
+		*/
 		m_reptil.setVenenoso(venenoso);
 		m_reptil.setTipoVeneno(tipo_veneno);
 		m_reptil.setId(id);
@@ -240,4 +258,9 @@ void cadastrarReptil(Reptil &m_reptil)
 		m_reptil.setSexo(sexo);
 		m_reptil.setTamanho(tamanho);
 		m_reptil.setDieta(dieta);
+}
+
+void listarAnimais(vector<Animal> &animais)
+{
+	
 }
