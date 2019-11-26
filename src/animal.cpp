@@ -1,5 +1,7 @@
 #include "animal.hpp"
 
+
+#construtor 
 Animal::Animal()
 {
 
@@ -16,10 +18,13 @@ Animal::Animal(int m_id, string m_classe, string m_nome_cientifico, string m_nom
 	dieta = m_dieta;
 }
 
+#destrutor 
 Animal::~Animal()
 {
 
 }
+
+#gets e sets 
 
 void Animal::setId(int m_id)
 {
