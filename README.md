@@ -14,4 +14,4 @@
 O objetivo deste trabalho é implementar um programa de cadastro de animais para a loja de animais silvestres ​Pet Fera​ .
 
 # Limitações do programa
-Leitura de arquivos .csv 
+Leitura de arquivos .csv e sem consulta por nome e/ou tipo. 
